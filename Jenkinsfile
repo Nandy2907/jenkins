@@ -3,17 +3,12 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Nandy2907/jenkins.git'
+                git branch: 'main', url: 'https://github.com/your-username/your-repo.git'
             }
         }
-        stage('Compile Java Code') {
+        stage('Run Python Script') {
             steps {
-                bat 'javac TimestampPrinter.java'
-            }
-        }
-        stage('Run Java Program') {
-            steps {
-                bat 'java TimestampPrinter'
+                bat 'python timestamp_printer.py'
             }
         }
     }
